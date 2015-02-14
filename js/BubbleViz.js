@@ -1,7 +1,7 @@
 var BubbleViz  = {
 
 	// Data
-	BubbleData: null,
+	bubbleData: null,
 
 
 	// Config
@@ -10,6 +10,9 @@ var BubbleViz  = {
 	draw: function (bubbleData) {
 		console.log(flaredata);
 		console.log(bubbleData);
+
+		this.bubbleData = bubbleData;
+
 		var diameter = 960,
 		    format = d3.format(",d"),
 		    color = d3.scale.category20c();
@@ -24,8 +27,8 @@ var BubbleViz  = {
 		    .attr("height", diameter)
 		    .attr("class", "bubble");
 
-		  var node = svg.selectAll(".node")
-		      .data(bubble.nodes(classes(flaredata))
+		 var node = svg.selectAll(".node")
+		      .data(bubble.nodes(classes(bubbleData))
 		      .filter(function(d) { return !d.children; }))
 		      .enter().append("g")
 		      .attr("class", "node")
