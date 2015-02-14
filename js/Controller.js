@@ -7,6 +7,7 @@ var Controller = {
 			BubbleViz.draw(bubbleData);
 			Controller.autocomplete(regionList);
 			Controller.hover_bubble();
+			Controller.hover_bubble_click();
 		})
 
 	},
@@ -35,12 +36,12 @@ var Controller = {
 			BubbleViz.draw(data);
 			$("#bubble").css("font-size", "1.75em");
 			Controller.hover_bubble();
+			Controller.hover_bubble_click();
 		});
 	},
 	hover_bubble: function(regionList) {
 		var old_color;
-		$( "#BubbleViz .node" ).hover(
-		  function() {
+		$( "#BubbleViz .node" ).hover( function() {
 		  	old_color = $(this ).find("circle").css("fill");
 		    $( this ).find("circle").css("fill", "white") ;
 		    $( this ).find("circle").css("cursor", "pointer");
@@ -49,8 +50,13 @@ var Controller = {
 		    $( this ).find("circle").css("cursor", "mouse");
 		  }
 		);
-	}
+	},
 
+	hover_bubble_click: function(regionList) {
+		$( "#BubbleViz .node" ).click( function() {
+			$("#info").css("visibility", "visible");
+		});
+	}
 }
 
 Controller.init();

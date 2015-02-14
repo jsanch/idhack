@@ -36,13 +36,53 @@ maintain = numfuture / df['currentRatio']
 df['futureRatio'] = numfuture
 df['maintain'] = maintain
 
+#print(sum((df['maintain'])))
+
 numfarfar = x * 103000000
 maintainfarfar = numfarfar / df['currentRatio']
 df['farAwayRatio'] = numfarfar
 df['maintainfarfar'] = maintainfarfar
 
 
-df.to_csv("projections.csv")
+
+
+
+counter = 0
+summer = 0
+for i in df['currentRatio']:
+    if np.isfinite(i):
+        summer = summer + i
+        counter += 1
+averagecurrentratio = summer / counter
+print("The average current ratio is: ")
+print(averagecurrentratio)
+
+counter = 0
+summer = 0
+for i in df['futureRatio']:
+    if np.isfinite(i):
+        summer += i
+        counter += 1
+averagefutureratio = summer / counter
+print("The average future ratio (2023) is: ")
+print(averagefutureratio)
+
+counter = 0
+summer = 0
+for i in df['farAwayRatio']:
+    if np.isfinite(i):
+        summer += i
+        counter += 1
+ave = summer / counter
+print("The average current ratio is: ")
+print(ave)
+
+
+
+
+
+
+#df.to_csv("projections.csv")
 '''
 
 # and 2040
