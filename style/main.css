@@ -10,7 +10,7 @@ body .ui-autocomplete {
 	float: left;
 	background: white;
 	border-radius: .5em;
-	font-family: 'Roboto', 'Helvetica Neue', Proxima, Arial;
+	font-family: 'sans-serif', 'Helvetica Neue', Proxima, Arial;
 	font-size: .9em;
 }
 
@@ -30,4 +30,8 @@ body .ui-autocomplete {
 
 #bubble{
 	float: right;
+}
+
+#BubbleViz font{
+	color: white;
 }

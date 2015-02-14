@@ -20,9 +20,6 @@ var Model = {
 
         	Model.regionNames = Model.getRegionNames();
 
-        	
-
-
 			callback.call(window, Model.bubbleData, Model.regionNames);
 
         }); 
@@ -129,8 +126,6 @@ var Model = {
 		for (var district in districtNames) {
 			districtList.push(district);
 		}
-		console.log(districtList)
-
 		return districtList;
 	}, 
 

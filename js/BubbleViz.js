@@ -10,7 +10,6 @@ var BubbleViz  = {
 	selector : "#BubbleViz",
 
 	draw: function (bubbleData) {
-		console.log("YOOYOYOYOYOOOYOYOOYOY");
 
 		d3.select(this.selector).selectAll("svg").remove();
 		this.svg = null;
