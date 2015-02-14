@@ -8,6 +8,8 @@ var Controller = {
 			Controller.autocomplete(regionList);
 			Controller.hover_bubble();
 			Controller.hover_bubble_click();
+			Model.populate_stats();
+
 		})
 
 	},
@@ -37,6 +39,7 @@ var Controller = {
 			$("#bubble").css("font-size", "1.75em");
 			Controller.hover_bubble();
 			Controller.hover_bubble_click();
+			Model.populate_stats();
 		});
 	},
 	hover_bubble: function(regionList) {
@@ -54,8 +57,31 @@ var Controller = {
 
 	hover_bubble_click: function(regionList) {
 		$( "#BubbleViz .node" ).click( function() {
+			// console.log("HOVER");
 			$("#info").css("visibility", "visible");
+
+			var name = $("#BubbleViz .node").children().html().replace(': ', '');
+			console.log(name);
+			var number_enrolled = Model.stats[name].number_enrolled;
+			$("#stats1").html(number_enrolled);
+
+			name = $("#BubbleViz .node").children().html().replace(': ', '');
+			number_enrolled = Model.stats[name].number_teaching_staff;
+			$("#stats2").html(number_enrolled);
+
+			name = $("#BubbleViz .node").children().html().replace(': ', '');
+			number_enrolled = Model.stats[name].avg_national_rank;
+			$("#stats3").html(number_enrolled);
+
+			name = $("#BubbleViz .node").children().html().replace(': ', '');
+			number_enrolled = Model.stats[name].number_pass;
+			$("#stats4").html(number_enrolled);
+
+			name = $("#BubbleViz .node").children().html().replace(': ', '');
+			number_enrolled = Model.stats[name].percentage_pass_change;
+			$("#stats5").html(number_enrolled);
 		});
+
 	}
 }
 

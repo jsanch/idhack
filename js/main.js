@@ -15,9 +15,4 @@ $(document).ready(function () {
 	    }
 	});
 
-	// $( ".ui-autocomplete" ).click(function() {
-	// 	console.log("pop");
- //        $("#submit1_btn").click();
- //        $("#input1").val("");
-
 });
