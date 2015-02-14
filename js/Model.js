@@ -1,6 +1,7 @@
 var Model = {
 	bubbleData:null,
 	schoolData:null,
+	regionNames:null,
 	popData:null,
 	waterData:null,
 
@@ -14,12 +15,12 @@ var Model = {
 
         	Model.schoolData = data;
         	// console.log(Model.schoolData);
-        	for (var i = 0; i < Model.schoolData.length; i++) {
-        		console.log(Model.schoolData[i]["region"]);
-        	};
+      
 
-        
+
 			Model.bubbleData =  Model.getBubbleData(); 
+
+        	Model.regionNames = Model.getRegionNames();
 
 			callback.call(window, Model.bubbleData);
 
@@ -59,17 +60,8 @@ var Model = {
 	},
 
 	getBubbleData: function() {
-		//console.log(Model.schoolData)
 
 		bubbleData = new Object();
-		// for (i = 0; i < 30; i++) {
-		// 	bubbleData[i] = new Object();
-		// 	bubbleData[i] = {"candidates" : "0","number_pass":"0"}
-		// }
-
-		// curr = 0;
-		// last = "Arusha"
-
 		for (var i = Model.schoolData.length - 1; i >= 0; i--) {
 
 			if (bubbleData[Model.schoolData[i].district] === undefined) {
@@ -89,7 +81,6 @@ var Model = {
 			bubbleData[Model.schoolData[i].district].number_pass += parseInt(Model.schoolData[i].number_pass);
 
 
-
 		}
 
 		for (var district in bubbleData) {
@@ -107,7 +98,26 @@ var Model = {
 
 		return newbubbledata;
 
+	}, 
+
+	getRegionNames: function() {
+
+		regionNames = new Object();
+		for (var i = Model.schoolData.length - 1; i >= 0; i--) {
+			regionNames[Model.schoolData[i].region] = "" ;
+		}
+
+		regionlist =[]
+		for (var region in regionNames) {
+			regionlist.push(region);
+		}
+
+
+		return regionlist;
+
 	}
+
+
 
 
 

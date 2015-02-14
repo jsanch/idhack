@@ -33,6 +33,7 @@ var BubbleViz  = {
 		      .enter().append("g")
 		      .attr("class", "node")
 		      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+		      
 
 		  node.append("title")
 		      .text(function(d) { return d.className + ": " + format(d.value); });
