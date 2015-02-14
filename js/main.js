@@ -1,14 +1,6 @@
 $(document).ready(function () {
 
-	var regions = 
-	[
-		"Arusha",
-		"Dar es Salaam",
-		"Dodoma",
-		"Iringa",
-		"Karega",
-		"Kigoma"
-	];
+	// var regions = [];
 	
 	$( "#input1" ).autocomplete({
 		source: regions
