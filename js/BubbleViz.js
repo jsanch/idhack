@@ -3,13 +3,17 @@ var BubbleViz  = {
 	// Data
 	bubbleData: null,
 
+	svg:null,
+
 
 	// Config
 	selector : "#BubbleViz",
 
 	draw: function (bubbleData) {
-		console.log(flaredata);
-		console.log(bubbleData);
+		console.log("YOOYOYOYOYOOOYOYOOYOY");
+
+		d3.select(this.selector).selectAll("svg").remove();
+		this.svg = null;
 
 		this.bubbleData = bubbleData;
 

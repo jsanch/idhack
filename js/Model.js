@@ -2,6 +2,7 @@ var Model = {
 	bubbleData:null,
 	schoolData:null,
 	regionNames:null,
+	districtNames:null,
 	popData:null,
 	waterData:null,
 
@@ -18,6 +19,9 @@ var Model = {
 			Model.bubbleData =  Model.getBubbleData(); 
 
         	Model.regionNames = Model.getRegionNames();
+
+        	
+
 
 			callback.call(window, Model.bubbleData, Model.regionNames);
 
@@ -109,12 +113,45 @@ var Model = {
 			regionlist.push(region);
 		}
 
-
 		return regionlist;
+	},
+
+	getDistrictNames: function(region) {
+
+
+		districtNames = new Object();
+		for (var i = Model.schoolData.length - 1; i >= 0; i--) {
+			if ( Model.schoolData[i].region == region) {
+				districtNames[Model.schoolData[i].district] = "";
+			}
+		}
+		districtList = []
+		for (var district in districtNames) {
+			districtList.push(district);
+		}
+		console.log(districtList)
+
+		return districtList;
+	}, 
+
+	getBubbleData2: function(region) {
+
+		districtList = Model.getDistrictNames(region);
+		obj = []
+
+		for (var row in Model.bubbleData.children){
+			for ( var item in districtList){
+				if ( Model.bubbleData.children[row].name ==  districtList[item] ) {
+					obj.push(Model.bubbleData.children[row]);
+				}
+			}
+		}
+
+	    newbubbledata = {"name" : "bubble", "children": obj}
+
+		return newbubbledata;
 
 	}
-
-
 
 
 

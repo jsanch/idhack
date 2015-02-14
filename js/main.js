@@ -5,10 +5,7 @@ $(document).ready(function () {
 		scrollingSpeed: 600
 	});
 
-	$( "#submit1_btn" ).click(function() {
-		var $input = $("#input1").val();
-	  	console.log($input);
-	});
+	$( "#submit1_btn" ).click(Controller.updatebubble());
 
 
 });
