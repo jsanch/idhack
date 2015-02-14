@@ -11,10 +11,8 @@ var Model = {
 
 	    // LOAD ALL WE NEED
 	    $.get("https://communities.socrata.com/resource/rd25-4b5p.json?$$app_token=qqWOL1eWwrOBiLADaJ0cKz1j5", function( data ) {
-        	schoolData = data;
-        	console.log(schoolData);
+        	Model.schoolData = data;
         
-		    console.log("hello");
 			bubbleData =  Model.getBubbleData(); 
 
 			callback.call(window, Model.bubbleData);
@@ -55,8 +53,47 @@ var Model = {
 	},
 
 	getBubbleData: function() {
-		console.log(Model.schoolData);
+		console.log("hello2");
+		//console.log(Model.schoolData)
 
+		bubbleData = new Object();
+		// for (i = 0; i < 30; i++) {
+		// 	bubbleData[i] = new Object();
+		// 	bubbleData[i] = {"candidates" : "0","number_pass":"0"}
+		// }
+
+		// curr = 0;
+		// last = "Arusha"
+
+		for (var i = Model.schoolData.length - 1; i >= 0; i--) {
+
+			if (bubbleData[Model.schoolData[i].region] === undefined) {
+				temp1 = 0;
+				temp2 = 0;
+			} else {
+                temp1  = parseInt(bubbleData[Model.schoolData[i].region].candidates)
+                			console.log(bubbleData[Model.schoolData[i].region].candidates);
+
+				temp2  = parseInt(bubbleData[Model.schoolData[i].region].number_pass)
+			}
+
+
+			bubbleData[Model.schoolData[i].region] = {"candidates" : temp1, "number_pass": temp2} ;
+
+
+			bubbleData[Model.schoolData[i].region].candidates += parseInt(Model.schoolData[i].candidates); 
+			bubbleData[Model.schoolData[i].region].number_pass += parseInt(Model.schoolData[i].number_pass);
+
+
+
+		}
+
+		for (var region in bubbleData) {
+			console.log(region);
+			bubbleData[region].average = bubbleData[region].number_pass / bubbleData[region].candidates ; 
+	     } 
+		console.log("hi");
+		console.log(bubbleData);
 	}
 
 
