@@ -3,23 +3,94 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/jquery.fullPage.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
     <title>Viz Tanz</title>
   </head>
   <body>
-   hello
-    <div id="BubbleViz"></div>
-    hello2
+
+  <div id="fullpage">
+
+    <div class="section">
+      	Story 1
+        <div id="BubbleViz"></div>
+  	</div>
+
+    <div class="section">
+      	Story 2
+  	</div>
+
+    <div class="section">
+      	Story 3
+  	</div>
+
+    <div class="section">
+      	Story 4
+  	</div>
+
+    <div class="section">
+      	Story 5
+  	</div>
+
+    <div class="section">
+      	Story 6
+  	</div>
+
+    <div class="section">
+      	Story 7
+  	</div>
+
+    <div class="section">
+      	Story 8
+  	</div>
+
+    <div class="section">
+      	Story 9
+  	</div>
+
+  </div>
+
+
   </body>
 
 
 
+  <!-- JAVASCRIPT LIBRARIES -->
+ 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+  <!-- fullpage js files -->
+
+  <!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
+  <script src="js/fullpage/jquery.easings.min.js"></script>
+
+  <!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
+  <script type="text/javascript" src="js/fullpage/jquery.slimscroll.min.js"></script>
+  <script type="text/javascript" src="js/fullpage/jquery.fullPage.min.js"></script>
+
+
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+  <!-- D3 -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
+  
+
+  <!-- Our JAVASCRIPT -->
+  <script src="js/main.js"></script>
   <script src="js/BubbleViz.js"></script>
   <script src="js/Model.js"></script>
-  
-<!-- Load last -->
   <script src="js/Controller.js"></script>
+
+
+
+
 
 
 </html>

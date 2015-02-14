@@ -5,7 +5,7 @@ var BubbleViz  = {
 
 
 	// Config
-	selector : '#BubbleViz',
+	selector : "#BubbleViz",
 
 	draw: function () {
 		var diameter = 960,
@@ -17,7 +17,7 @@ var BubbleViz  = {
 		    .size([diameter, diameter])
 		    .padding(1.5);
 
-		var svg = d3.select("body").append("svg")
+		var svg = d3.select("#BubbleViz").append("svg")
 		    .attr("width", diameter)
 		    .attr("height", diameter)
 		    .attr("class", "bubble");
