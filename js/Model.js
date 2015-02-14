@@ -13,6 +13,10 @@ var Model = {
 	    $.get("https://communities.socrata.com/resource/rd25-4b5p.json?$$app_token=qqWOL1eWwrOBiLADaJ0cKz1j5", function( data ) {
         	schoolData = data;
         	console.log(schoolData);
+        	for (var i = 0; i < schoolData.length; i++) {
+        		console.log(schoolData[i]["region"]);
+        	};
+        	
         
 		    console.log("hello");
 			bubbleData =  Model.getBubbleData(); 
