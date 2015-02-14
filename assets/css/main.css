@@ -129,9 +129,13 @@ a:after {
 
 #f {
 	background: #1a1a1a;
-	/*padding-top: 70px;*/
+	padding-top: 1em;
 	padding-bottom: 70px;
 	text-align: center
+}
+
+#searchbar{
+	padding-top: 1.5em;
 }
 
 #f h3 {

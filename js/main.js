@@ -1,11 +1,5 @@
 $(document).ready(function () {
 
-	// var regions = [];
-	
-	$( "#input1" ).autocomplete({
-		source: regions
-	});
-
 	//fullpage scrolling
 	$('#fullpage').fullpage({
 		scrollingSpeed: 600

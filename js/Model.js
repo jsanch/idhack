@@ -14,15 +14,12 @@ var Model = {
 	    $.get("https://communities.socrata.com/resource/rd25-4b5p.json?$$app_token=qqWOL1eWwrOBiLADaJ0cKz1j5&$limit=20011", function( data ) {
 
         	Model.schoolData = data;
-        	// console.log(Model.schoolData);
-      
-
 
 			Model.bubbleData =  Model.getBubbleData(); 
 
         	Model.regionNames = Model.getRegionNames();
 
-			callback.call(window, Model.bubbleData);
+			callback.call(window, Model.bubbleData, Model.regionNames);
 
         }); 
 

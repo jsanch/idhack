@@ -1,5 +1,5 @@
 text {
-  font: 10px sans-serif;
+  font: .6em sans-serif;
 }
 
 body .ui-autocomplete {
@@ -11,7 +11,7 @@ body .ui-autocomplete {
 	background: white;
 	border-radius: .5em;
 	font-family: 'Roboto', 'Helvetica Neue', Proxima, Arial;
-	font-size: 1em;
+	font-size: .9em;
 }
 
 .ui-autocomplete li:hover
@@ -22,4 +22,12 @@ body .ui-autocomplete {
     outline:none;
     border-radius: .5em;
     cursor: pointer;
+}
+
+#searchbar{
+	float: left;
+}
+
+#bubble{
+	float: right;
 }
