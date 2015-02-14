@@ -1,96 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style/main.css">
-    <link rel="stylesheet" type="text/css" href="style/jquery.fullPage.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-
-    <title>Viz Tanz</title>
-  </head>
-  <body>
-
-  <div id="fullpage">
-
-    <div class="section">
-      	Story 1
-        <div id="BubbleViz"></div>
-  	</div>
-
-    <div class="section">
-      	Story 2
-  	</div>
-
-    <div class="section">
-      	Story 3
-  	</div>
-
-    <div class="section">
-      	Story 4
-  	</div>
-
-    <div class="section">
-      	Story 5
-  	</div>
-
-    <div class="section">
-      	Story 6
-  	</div>
-
-    <div class="section">
-      	Story 7
-  	</div>
-
-    <div class="section">
-      	Story 8
-  	</div>
-
-    <div class="section">
-      	Story 9
-  	</div>
-
-  </div>
+  	<head>
+	    <meta charset="utf-8">
+	    <link rel="stylesheet" type="text/css" href="style/main.css">
+	    <link rel="stylesheet" type="text/css" href="style/jquery.fullPage.css" />
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+	    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 
 
-  </body>
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="assets/css/main.css" rel="stylesheet">
+    	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+        <script src="assets/js/jquery.min.js"></script>
+    	<!-- // <script src="assets/js/modernizr.custom.js"></script> -->
+    	
+
+    	
+        <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+	    <title>Visualizing Tanzania</title>
+  	</head>
+
+  	<body>
+	  	<div id="fullpage">
+			<div class="section">
+			  	<section id="home"s name="home"></section>
+			  	<div id="headerwrap">
+			  		<div class="container">
+			  			<div class="logo">
+			  				<img src="assets/img/logo.png">
+			  			</div>
+			  			<br>
+			  			<div class="row">
+			  				<h1>Visualizing Tanzania</h1>
+			  				<br>
+			  				<h3>By Aansh & Jaime & George & Izel.</h3>
+			  				<br>
+			  				<br>
+			  				<div class="col-lg-6 col-lg-offset-3">
+			  				</div>
+			  			</div>
+			  		</div><!-- /container -->
+			  	</div><!-- /headerwrap -->
+			</div>
+
+			<div class="section">
+				<section id="story1" name="story"></section>
+				<div id="f">
+					<div class="container">
+						<div class="row">
+							<h3>Story 1</h3>
+							<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+							
+							<div class="row">
+							  <div class="col-lg-3"></div>
+							  <div class="col-lg-6">
+							    <div class="input-group">
+							      <input type="text" class="form-control" placeholder="Search for...">
+							      <span class="input-group-btn">
+							        <button class="btn btn-default" type="button">Go</button>
+							      </span>
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-6 -->
+							</div><!-- /.row -->
+
+							<!-- INTRO INFORMATIO-->
+							<div class="col-lg-1 ">
+								<div id="BubbleViz"></div>
+							</div>								
+						</div>
+					</div><!-- /container -->
+				</div><!-- /f -->
+			</div>
+	  	</div>
+	</body>
 
 
 
-  <!-- JAVASCRIPT LIBRARIES -->
+  	<!-- JAVASCRIPT LIBRARIES -->
  
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/queue.v1.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/queue.v1.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
 
-  <!-- fullpage js files -->
+	<!-- fullpage js files -->
 
-  <!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
-  <script src="js/fullpage/jquery.easings.min.js"></script>
+	<!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
+	<script src="js/fullpage/jquery.easings.min.js"></script>
 
-  <!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
-  <script type="text/javascript" src="js/fullpage/jquery.slimscroll.min.js"></script>
-  <script type="text/javascript" src="js/fullpage/jquery.fullPage.min.js"></script>
-
-
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-
-  <!-- D3 -->
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
-  
-
-  <!-- Our JAVASCRIPT -->
-  <script src="js/main.js"></script>
-  <script src="js/BubbleViz.js"></script>
-  <script src="js/Model.js"></script>
-  <script src="js/Controller.js"></script>
+	<!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
+	<script type="text/javascript" src="js/fullpage/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="js/fullpage/jquery.fullPage.min.js"></script>
 
 
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+	<!-- D3 -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
 
 
+	<!-- Our JAVASCRIPT -->
+	<script src="js/main.js"></script>
+	<script src="js/BubbleViz.js"></script>
+	<script src="js/Model.js"></script>
+	<script src="js/Controller.js"></script>
 
+
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/classie.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </html>
