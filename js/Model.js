@@ -9,8 +9,15 @@ var Model = {
 	    Model.bubbleData = null;
 
 	    // LOAD ALL WE NEED
+	    
 	    $.get("https://communities.socrata.com/resource/rd25-4b5p.json?$$app_token=qqWOL1eWwrOBiLADaJ0cKz1j5&$limit=20011", function( data ) {
+
         	Model.schoolData = data;
+        	// console.log(Model.schoolData);
+        	for (var i = 0; i < Model.schoolData.length; i++) {
+        		console.log(Model.schoolData[i]["region"]);
+        	};
+
         
 			Model.bubbleData =  Model.getBubbleData(); 
 

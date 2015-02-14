@@ -2,3 +2,24 @@ text {
   font: 10px sans-serif;
 }
 
+body .ui-autocomplete {
+	color: black;
+	list-style: none;
+	padding-top: .2em;
+	padding-left: .5em;
+	float: left;
+	background: white;
+	border-radius: .5em;
+	font-family: 'Roboto', 'Helvetica Neue', Proxima, Arial;
+	font-size: 1em;
+}
+
+.ui-autocomplete li:hover
+{
+	font-weight: bold;
+    color: white;
+    background-color: #C7C7EE;
+    outline:none;
+    border-radius: .5em;
+    cursor: pointer;
+}

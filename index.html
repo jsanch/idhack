@@ -28,6 +28,7 @@
 
   	<body>
 	  	<div id="fullpage">
+
 			<div class="section">
 			  	<section id="home"s name="home"></section>
 			  	<div id="headerwrap">
@@ -58,12 +59,12 @@
 							<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
 							
 							<div class="row">
-							  <div class="col-lg-3"></div>
+							 <div class="col-lg-3"></div> 
 							  <div class="col-lg-6">
 							    <div class="input-group">
-							      <input type="text" class="form-control" placeholder="Search for...">
+							      <input type="text" id="input1" class="form-control" placeholder="Search for a region...">
 							      <span class="input-group-btn">
-							        <button class="btn btn-default" type="button">Go</button>
+							        <button name="region" id="submit1_btn"class="btn btn-default" type="button">Go</button>
 							      </span>
 							    </div><!-- /input-group -->
 							  </div><!-- /.col-lg-6 -->
@@ -77,6 +78,8 @@
 					</div><!-- /container -->
 				</div><!-- /f -->
 			</div>
+
+			
 	  	</div>
 	</body>
 
@@ -94,6 +97,7 @@
 
 	<!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
 	<script src="js/fullpage/jquery.easings.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 
 	<!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
 	<script type="text/javascript" src="js/fullpage/jquery.slimscroll.min.js"></script>
@@ -114,6 +118,7 @@
 	<script src="js/BubbleViz.js"></script>
 	<script src="js/Model.js"></script>
 	<script src="js/Controller.js"></script>
+
 
 
 	<!-- Placed at the end of the document so the pages load faster -->
