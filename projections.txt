@@ -1,0 +1,17 @@
+CURRENT: number_enrolled / number_teaching_staff = y
+
+FUTURE(input year):  x = number_enrolled/API request for today's pop
+
+x*(API for future pop) = future students enrolled
+
+***Expected students enrolled
+To maintain teacher ratio: future students enrolled / y
+
+After 2022:
+{"year":2023, "pop":66506000}
+2030:77000000
+2035:92000000
+{2040:103000000}
+2050: 128000000
+2060:160000000
+2073:200000000
