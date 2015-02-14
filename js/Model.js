@@ -1,7 +1,8 @@
 var Model = {
 	bubbleData:null,
-	allData:null,
-	popData:null
+	schoolData:null,
+	popData:null,
+	waterData:null,
 
 	initData: function(callback) {
 
@@ -10,7 +11,7 @@ var Model = {
 
 	    // LOAD ALL WE NEED
 	    $.get("https://communities.socrata.com/resource/rd25-4b5p.json?$$app_token=qqWOL1eWwrOBiLADaJ0cKz1j5", function( data ) {
-        	allData = data;
+        	schoolData = data;
         }); 
 		bubbleData =  Model.loadBubbleData(); 
 
@@ -33,6 +34,19 @@ var Model = {
 		}
 	}
 
+	loadWaterData: function () {
+		$.get("https://communities.socrata.com/resource/npaw-5hb4.json?$$app_token=qqWOL1eWwrOBiLADaJ0cKz1j5", function(data)) {
+			waterData = data;
+		}
+	}
+
+	aggregateRegionSchoolData: function () {
+		regions = {}
+
+		for(i in schoolData) {
+
+		}
+	}
 
 
 }
