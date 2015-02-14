@@ -11,7 +11,7 @@ $(document).ready(function () {
 	];
 	
 	$( "#input1" ).autocomplete({
-	source: regions
+		source: regions
 	});
 
 	//fullpage scrolling

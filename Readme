@@ -1,0 +1,7 @@
+Readme 
+
+Viz 1 : Bubbles of " District Success" 
+
+Bubble chart encodes success data in the area of the circles. This sucess data is based on the AVG percentage pass (percentage pass is the percentage of students who pass exams in a certain school). Although less perceptually-accurate than bar charts, they can pack hundreds of values into a small space.
+
+pass percentage
