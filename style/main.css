@@ -24,6 +24,37 @@ body .ui-autocomplete {
     cursor: pointer;
 }
 
+#story_title1{
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	color: white;
+	float: left;
+	font-family: 'sans-serif', 'Helvetica Neue', Proxima, Arial;
+	font-size: .9em;
+	font-weight: bold;
+	border: solid 2px;
+	border-radius: .5em;
+}
+
+#info{
+	visibility: hidden;
+	width: 33%;
+	float: left;
+	padding-top: 11em;
+	font-family: 'sans-serif', 'Helvetica Neue', Proxima, Arial;
+}
+
+.info_group{
+	float: left;
+	width: 100%;
+	min-height: 5em;
+}
+
+.info_title{
+	color: black;
+	font-weight: bold;
+}
+
 #searchbar{
 	float: left;
 }
@@ -33,5 +64,6 @@ body .ui-autocomplete {
 }
 
 #BubbleViz font{
+	padding-top: 0;
 	color: white;
 }
