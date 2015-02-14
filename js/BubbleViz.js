@@ -7,7 +7,9 @@ var BubbleViz  = {
 	// Config
 	selector : "#BubbleViz",
 
-	draw: function () {
+	draw: function (bubbleData) {
+		console.log(flaredata);
+		console.log(bubbleData);
 		var diameter = 960,
 		    format = d3.format(",d"),
 		    color = d3.scale.category20c();
@@ -22,11 +24,10 @@ var BubbleViz  = {
 		    .attr("height", diameter)
 		    .attr("class", "bubble");
 
-		d3.json("data/flare.json", function(error, root) {
 		  var node = svg.selectAll(".node")
-		      .data(bubble.nodes(classes(root))
+		      .data(bubble.nodes(classes(flaredata))
 		      .filter(function(d) { return !d.children; }))
-		    .enter().append("g")
+		      .enter().append("g")
 		      .attr("class", "node")
 		      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
@@ -41,13 +42,12 @@ var BubbleViz  = {
 		      .attr("dy", ".3em")
 		      .style("text-anchor", "middle")
 		      .text(function(d) { return d.className.substring(0, d.r / 3); });
-		});
 
 		// Returns a flattened hierarchy containing all leaf nodes under the root.
 		function classes(root) {
 		  var classes = [];
 
-		  function recurse(name, node) {
+		function recurse(name, node) {
 		    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
 		    else classes.push({packageName: name, className: node.name, value: node.size});
 		  }
