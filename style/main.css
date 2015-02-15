@@ -2,10 +2,6 @@ text {
   font: .6em sans-serif;
 }
 
-#story3{
-	background-color: black;
-}
-
 body .ui-autocomplete {
 	color: black;
 	list-style: none;
@@ -28,7 +24,7 @@ body .ui-autocomplete {
     cursor: pointer;
 }
 
-#story_title1{
+#story_title{
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 	color: white;
@@ -44,7 +40,7 @@ body .ui-autocomplete {
 	visibility: hidden;
 	width: 33%;
 	float: left;
-	padding-top: 11em;
+	padding-top: 7em;
 	font-family: 'sans-serif', 'Helvetica Neue', Proxima, Arial;
 }
 
