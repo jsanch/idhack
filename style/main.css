@@ -2,6 +2,10 @@ text {
   font: .6em sans-serif;
 }
 
+#story3{
+	background-color: black;
+}
+
 body .ui-autocomplete {
 	color: black;
 	list-style: none;
