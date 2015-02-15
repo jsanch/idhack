@@ -16,7 +16,7 @@ var BubbleViz  = {
 
 		this.bubbleData = bubbleData;
 
-		var diameter = 625,
+		var diameter = 675,
 		    format = d3.format(",d"),
 		    color = d3.scale.category20c();
 
