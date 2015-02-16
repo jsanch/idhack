@@ -1,5 +1,5 @@
 text {
-  font: .7em sans-serif;
+  font: .6em sans-serif;
 }
 
 body .ui-autocomplete {
@@ -34,6 +34,10 @@ body .ui-autocomplete {
 	font-weight: bold;
 	border: solid 2px;
 	border-radius: .5em;
+}
+
+.break{
+	padding-top: 1em;
 }
 
 #info{
