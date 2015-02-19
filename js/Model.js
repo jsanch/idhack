@@ -169,8 +169,6 @@ var Model = {
 
 	getDistrictStats: function() {
 		districtstats = new Object();
-		temp7 = 0;
-
 		for (var i = Model.schoolData.length - 1; i >= 0; i--) {
 			if (districtstats[Model.schoolData[i].district] === undefined) {
 				temp1 = 0;
@@ -179,6 +177,7 @@ var Model = {
 				temp4 = 0;
 				temp5 = 0;
 				temp6 = 0;
+				temp7 = 0;
 			} else {
 				if(isNaN(districtstats[Model.schoolData[i].district].number_enrolled) === false){
                 	temp1  = parseInt(districtstats[Model.schoolData[i].district].number_enrolled)
@@ -194,7 +193,6 @@ var Model = {
 				}
 				if(isNaN(districtstats[Model.schoolData[i].district].national_rank) === false){
 					temp5  = parseInt(districtstats[Model.schoolData[i].district].national_rank)
-					temp7 += 1;
 				}
 				if(isNaN(districtstats[Model.schoolData[i].district].number_teaching_staff) === false){
 					temp6  = parseInt(districtstats[Model.schoolData[i].district].number_teaching_staff)
@@ -210,20 +208,47 @@ var Model = {
     														"school_count": temp7 
     														}
 
+			if(isNaN(Model.schoolData[i].number_enrolled) === false){    														
+				districtstats[Model.schoolData[i].district].number_enrolled += parseInt(Model.schoolData[i].number_enrolled);
+			}
+			if(isNaN(Model.schoolData[i].number_pass) === false){ 
+				districtstats[Model.schoolData[i].district].number_pass += parseInt(Model.schoolData[i].number_pass);
+			}
+			if(isNaN(Model.schoolData[i].percentage_pass_change) === false){ 
+				districtstats[Model.schoolData[i].district].percentage_pass_change += parseInt(Model.schoolData[i].percentage_pass_change);
+			}
+			if(isNaN(Model.schoolData[i].percentage_pass) === false){ 
+				districtstats[Model.schoolData[i].district].percentage_pass += parseInt(Model.schoolData[i].percentage_pass);
+			}
+			if(isNaN(Model.schoolData[i].national_rank) === false){ 
+				districtstats[Model.schoolData[i].district].national_rank += parseInt(Model.schoolData[i].national_rank);
+			}
+			if(isNaN(Model.schoolData[i].number_teaching_staff) === false){ 
+				districtstats[Model.schoolData[i].district].number_teaching_staff += parseInt(Model.schoolData[i].number_teaching_staff);
+			}	
+		}
 
-			districtstats[Model.schoolData[i].district].number_enrolled += parseInt(Model.schoolData[i].number_enrolled);
-			districtstats[Model.schoolData[i].district].number_pass += parseInt(Model.schoolData[i].number_pass);
-			districtstats[Model.schoolData[i].district].percentage_pass_change += parseInt(Model.schoolData[i].percentage_pass_change);
-			districtstats[Model.schoolData[i].district].percentage_pass += parseInt(Model.schoolData[i].percentage_pass);
-			districtstats[Model.schoolData[i].district].national_rank += parseInt(Model.schoolData[i].national_rank);
-			districtstats[Model.schoolData[i].district].number_teaching_staff += parseInt(Model.schoolData[i].number_teaching_staff);
-			districtstats[Model.schoolData[i].district].school_count  += temp7; 
-
-
+		// calculate total # schools in each district
+		for(var district in districtstats){
+			j = 0;
+			for (var i = Model.schoolData.length - 1; i >= 0; i--) {
+				if(Model.schoolData[i].district == district){
+					if(isNaN(Model.schoolData[i].national_rank) === false){
+						j++;
+						districtstats[district].school_count += 1;
+					}
+				}
+			}
 		}
 
 		for (var district in districtstats) {
-			districtstats[district].avg_national_rank = Math.round(districtstats[district].national_rank / districtstats[district].school_count); 
+			districtstats[district].avg_national_rank = Math.round(districtstats[district].national_rank / districtstats[district].school_count);
+			if(districtstats[district].number_enrolled == 0){
+				districtstats[district].number_enrolled = "N/A";
+			}
+			if(districtstats[district].number_teaching_staff == 0){
+				districtstats[district].number_teaching_staff = "N/A";
+			}
 	     } 
 		return districtstats;
 	}
